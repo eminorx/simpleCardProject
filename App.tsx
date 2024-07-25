@@ -1,117 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  Text,
+  SafeAreaView,
+  Button,
+  TouchableOpacity,
+  StyleSheet,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.card_container}>
+        <View style={styles.card_body}>
+          <Text style={styles.card_title}>Eddard Stark</Text>
+          <Text style={styles.card_text}>Winter is coming</Text>
         </View>
-      </ScrollView>
+        <TouchableOpacity style={styles.card_button_container}>
+          <Text style={styles.card_button_title}>I LIKED</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.card_container}>
+        <View style={styles.card_body}>
+          <Text style={styles.card_title}>Eddard Stark</Text>
+          <Text style={styles.card_text}>Winter is coming</Text>
+        </View>
+        <TouchableOpacity style={styles.card_button_container}>
+          <Text style={styles.card_button_title}>I LIKED</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.card_container}>
+        <View style={styles.card_body}>
+          <Text style={styles.card_title}>Eddard Stark</Text>
+          <Text style={styles.card_text}>Winter is coming</Text>
+        </View>
+        <TouchableOpacity style={styles.card_button_container}>
+          <Text style={styles.card_button_title}>I LIKED</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    backgroundColor: '#e0e0e0',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  card_container: {
+    backgroundColor: 'white',
+    margin: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 10,
   },
-  sectionDescription: {
-    marginTop: 8,
+  card_body: {
+    padding: 10,
+  },
+  card_title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+    marginBottom: 3,
+  },
+  card_text: {
     fontSize: 18,
-    fontWeight: '400',
+    margin: 10,
+    marginTop: 3,
   },
-  highlight: {
-    fontWeight: '700',
+  card_button_container: {
+    backgroundColor: '#00C2FF',
+    padding: 10,
+    alignItems: 'center',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+  },
+  card_button_title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 
